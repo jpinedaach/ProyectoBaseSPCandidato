@@ -9,7 +9,11 @@ h
 8src/test/java/com/co/choucair/stepdefinitions/Hooks.java,f\4\f44ba16aad6759941615ff7951212036572a43ea
 
 Osrc/test/java/com/co/choucair/stepdefinitions/SerenityLoginStepDefinitions.java,9\7\971f7ea0bce7d2c156c4d24b01cf8b6c4c4cfc24
+a
+1src/test/resources/features/serenityLogin.feature,f\1\f14b89e8e3eff8aa4a1c38e9804786f457cf94b4
 n
 >src/test/java/com/co/choucair/runners/SerenityLoginRunner.java,e\7\e7e8da1043c035f0f08d88ed813e8281b29b526f
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+H
+sonar-project.properties,2\5\2538046035efb77ecc44e1fd2eec1e2641594d4c
