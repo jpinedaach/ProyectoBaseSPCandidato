@@ -39,15 +39,15 @@ pipeline {
             -Dsonar.projectKey=ProyectoBaseSPCandidato \
             -Dsonar.projectName=ProyectoBaseSPCandidato \
             -Dsonar.projectVersion=1.0 \
-            -Dsonar.host.url=http://localhost:9000 \
+            //-Dsonar.host.url=http://localhost:9000 \
             -Dsonar.sources=src
             -Dsonar.language=java
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.my.property=value
             -Dsonar.jacoco.reportPaths=build/jacoco/jacocoTest.exec
             -Dsonar.java.binaries=src/main/java
-            -Dsonar.login=admin
-            -Dsonar.password=Pimor231990*
+            //-Dsonar.login=admin
+            //-Dsonar.password=Pimor231990*
             -Dsonar.junit.reportxsPaths=target/surefire-reports
         }
       }
