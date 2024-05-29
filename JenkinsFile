@@ -77,17 +77,4 @@ pipeline {
       }
     }
   }
-
-  post {
-          always {
-              // Este bloque se ejecuta siempre después de todas las etapas
-
-              // Aquí enviamos el correo electrónico
-              emailext(
-                  to: 'jpinedaa@choucairtesting.com',
-                  subject: 'Pipeline ejecutada exitosamente',
-                  body: 'La ejecución del pipeline ha finalizado correctamente. Puedes revisar los resultados en Jenkins.'
-              )
-          }
-      }
 }
