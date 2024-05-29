@@ -4,6 +4,8 @@ apply plugin: 'java-library'
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+apply plugin: "org.sonarqube"
+apply plugin: "application"
 
 
 
@@ -25,6 +27,7 @@ buildscript {
     }
     dependencies {
         classpath "net.serenity-bdd:serenity-gradle-plugin:3.9.8"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:5.0.0.4638"
     }
 }
 
@@ -53,6 +56,10 @@ dependencies {
     implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
     implementation 'com.github.javafaker:javafaker:1.0.2'
 
+}
+
+application {
+    mainClass = 'org.gradle.sample.Main'
 }
 
 test {
