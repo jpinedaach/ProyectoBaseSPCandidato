@@ -84,6 +84,7 @@ pipeline {
               // Aquí enviamos el correo electrónico
               emailext(
                   to: 'juanpineda90@outlook.com',
+                  from: 'jpinedaach@outlook.com'
                   subject: 'Pipeline ejecutada exitosamente',
                   body: 'La ejecución del pipeline ha finalizado correctamente. Puedes revisar los resultados en Jenkins.'
               )
