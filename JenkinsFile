@@ -28,6 +28,19 @@ pipeline {
       }
     }
 
+    stage('SonarQube analysis'){
+      steps {
+        script {
+          scannerHome = tool 'sonar-scanner'//mismo nombre del servidor configurado en las Global Tools Jenkins
+        }
+        withSonarQubeEnv('sonarqube'){//mismo nombre del servidor configurado en la configuracion del sistema jenkins
+          script {
+            bat ("./gradlew sonar -Dsonar.projectKey=ProyectoBaseSPCandidato -Dsonar.projectName='ProyectoBaseSPCandidato' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_8ba9208c8845a0ef7e3991e35863cac5ecacfc3e")
+          }
+        }
+      }
+    }
+
     stage('Ejecutar Pruebas') {
       steps {
         dir(D_WORKSPACE) {
@@ -43,19 +56,6 @@ pipeline {
               echo 'Test Ejecutados con Fallo'
               currentBuild.result = 'UNSTABLE'
             }
-          }
-        }
-      }
-    }
-
-    stage('SonarQube analysis'){
-      steps {
-        script {
-          scannerHome = tool 'SonarScanner'//mismo nombre del servidor configurado en las Global Tools Jenkins
-        }
-        withSonarQubeEnv('sonarqube'){//mismo nombre del servidor configurado en la configuracion del sistema jenkins
-          script {
-            bat ("./gradlew sonar -Dsonar.projectKey=ProyectoBaseSPCandidato -Dsonar.projectName='ProyectoBaseSPCandidato' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_8ba9208c8845a0ef7e3991e35863cac5ecacfc3e")
           }
         }
       }
