@@ -100,7 +100,8 @@ pipeline {
   }
 
   post {
-      always {
+    steps {
+      script {
           // Este bloque se ejecuta siempre después de todas las etapas
           // Aquí enviamos el correo electrónico
           emailext(
@@ -110,5 +111,6 @@ pipeline {
               body: 'La ejecución del pipeline ha finalizado correctamente. Puedes revisar los resultados en Jenkins.'
           )
       }
+    }
   }
 }
