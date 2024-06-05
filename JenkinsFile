@@ -97,18 +97,18 @@ pipeline {
         }
       }
     }
-  }
 
-  stage('Enviar Email') {
-              steps {
-                  emailext (
-                      subject: "Estado de construcción: ${currentBuild.result}",
-                      body: "El estado de la construcción es: ${currentBuild.result}",
-                      recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-                      to: 'jpinedaach@outlook.com',
-                      replyTo: 'jpinedaach@outlook.com',
-                      mimeType: 'text/html'
-                  )
-              }
-          }
+    stage('Enviar Email') {
+      steps {
+        emailext (
+          subject: "Estado de construcción: ${currentBuild.result}",
+          body: "El estado de la construcción es: ${currentBuild.result}",
+          recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+          to: 'jpinedaach@outlook.com',
+          replyTo: 'jpinedaach@outlook.com',
+          mimeType: 'text/html'
+        )
+      }
+    }
+  }
 }
