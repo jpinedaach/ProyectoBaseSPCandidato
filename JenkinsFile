@@ -55,7 +55,7 @@ pipeline {
         }
         withSonarQubeEnv('sonarqube'){//mismo nombre del servidor configurado en la configuracion del sistema jenkins
           script {
-            bat ("sonar-scanner")
+            bat 'sonar-scanner'
           }
         }
       }
