@@ -35,7 +35,12 @@ pipeline {
         }
         withSonarQubeEnv('sonarqube'){//mismo nombre del servidor configurado en la configuracion del sistema jenkins
           script {
-            bat ("./gradlew sonar -Dsonar.projectKey=ProyectoBaseSPCandidato -Dsonar.projectName='ProyectoBaseSPCandidato' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_497b4a865d5fe5f13ad477d427e3e347bf9ff6b3")
+            bat ("./gradlew sonar \
+                    -Dsonar.projectKey=ProyectoBaseSPCandidato \
+                    -Dsonar.projectName='ProyectoBaseSPCandidato' \
+                    -Dsonar.sources=src \
+                    -Dsonar.host.url=http://localhost:9000 \
+                    -Dsonar.token=sqp_497b4a865d5fe5f13ad477d427e3e347bf9ff6b3")
           }
         }
       }
