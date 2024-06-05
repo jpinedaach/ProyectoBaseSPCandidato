@@ -54,7 +54,7 @@ pipeline {
           scannerHome = tool 'sonar-scanner'//mismo nombre del servidor configurado en las Global Tools Jenkins
         }
         withSonarQubeEnv('sonarqube'){//mismo nombre del servidor configurado en la configuracion del sistema jenkins
-          bat ("./gradlew sonarqube")
+          bat ("sonar-scanner")
         }
       }
     }
